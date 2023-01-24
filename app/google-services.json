@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "452930357222",
+    "project_id": "vitstop-f3700",
+    "storage_bucket": "vitstop-f3700.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:452930357222:android:876f1bb2d7bcf476877827",
+        "android_client_info": {
+          "package_name": "com.example.vitstop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "452930357222-je2aqqv9v5g15orgq66pv2ffosi0dodb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBoMclMF2o3a7eziHS3XcVrZMNEhWf8Yz4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "452930357222-je2aqqv9v5g15orgq66pv2ffosi0dodb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
