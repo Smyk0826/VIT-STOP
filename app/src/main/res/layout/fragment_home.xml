@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingTop="200dp"
     tools:context=".fragments.Home">
     <LinearLayout
         android:layout_width="match_parent"
@@ -50,7 +51,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Featured"
+                    android:text="Popular"
                     android:textSize="18sp"/>
 
                 <TextView
@@ -66,38 +67,39 @@
                     android:text="See All" />
             </RelativeLayout>
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/popular_recycler"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"/>
+                android:layout_height="350dp"/>
         </LinearLayout>
-        <LinearLayout
-            android:padding="5dp"
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Featured"
-                    android:textSize="18sp"/>
+<!--        <LinearLayout-->
+<!--            android:padding="5dp"-->
+<!--            android:orientation="vertical"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent">-->
+<!--            <RelativeLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent">-->
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Featured"-->
+<!--                    android:textSize="18sp"/>-->
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_gravity="right"
-                    android:layout_marginEnd="5dp"
-                    android:layout_marginRight="5dp"
-                    android:gravity="right"
-                    android:textSize="18sp"
-                    android:text="See All" />
-            </RelativeLayout>
-            <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="match_parent"
-                android:layout_height="200dp"/>
-        </LinearLayout>
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_alignParentEnd="true"-->
+<!--                    android:layout_alignParentRight="true"-->
+<!--                    android:layout_gravity="right"-->
+<!--                    android:layout_marginEnd="5dp"-->
+<!--                    android:layout_marginRight="5dp"-->
+<!--                    android:gravity="right"-->
+<!--                    android:textSize="18sp"-->
+<!--                    android:text="See All" />-->
+<!--            </RelativeLayout>-->
+<!--            <androidx.recyclerview.widget.RecyclerView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="200dp"/>-->
+<!--        </LinearLayout>-->
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>

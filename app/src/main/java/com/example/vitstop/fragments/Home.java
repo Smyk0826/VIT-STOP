@@ -12,8 +12,10 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.vitstop.Features.CategoryFragment;
+import com.example.vitstop.Features.Popular;
 import com.example.vitstop.R;
 import com.example.vitstop.adapter.CategoryAdapter;
+import com.example.vitstop.adapter.PopularAdapter;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -34,9 +36,15 @@ import static android.content.ContentValues.TAG;
  */
 public class Home extends Fragment {
     private FirebaseFirestore db;
+    //category
     private List<CategoryFragment> listCategory;
     private CategoryAdapter mCategoryAdapter;
     private RecyclerView categoryRecycler;
+
+    //populars
+    private List<Popular> listPopular;
+    private PopularAdapter mPopularAdapter;
+    private RecyclerView PopularRecycler;
 
 
     public Home() {
@@ -49,11 +57,21 @@ public class Home extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         db = FirebaseFirestore.getInstance();
+
+        //category
         categoryRecycler = view.findViewById(R.id.recycler_category);
         listCategory = new ArrayList<>();
         mCategoryAdapter = new CategoryAdapter(getContext(),listCategory);
         categoryRecycler.setLayoutManager(new LinearLayoutManager(getContext(),RecyclerView.HORIZONTAL, false));
         categoryRecycler.setAdapter(mCategoryAdapter);
+
+        //Popular
+        PopularRecycler = view.findViewById(R.id.popular_recycler);
+        listPopular = new ArrayList<>();
+        mPopularAdapter = new PopularAdapter(getContext(),listPopular);
+        PopularRecycler.setLayoutManager(new LinearLayoutManager(getContext(),RecyclerView.HORIZONTAL,false));
+        PopularRecycler.setAdapter(mPopularAdapter);
+
 
         db.collection("CategoryFragment")
                 .get()
@@ -65,6 +83,23 @@ public class Home extends Fragment {
                                 CategoryFragment categoryFragment = document.toObject(CategoryFragment.class);
                                 listCategory.add(categoryFragment);
                                 mCategoryAdapter.notifyDataSetChanged();
+                            }
+                        } else {
+                            Log.w("TAG", "Error getting documents.", task.getException());
+                        }
+                    }
+                });
+
+        db.collection("Popular")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                Popular popular = document.toObject(Popular.class);
+                                listPopular.add(popular);
+                                mPopularAdapter.notifyDataSetChanged();
                             }
                         } else {
                             Log.w("TAG", "Error getting documents.", task.getException());
