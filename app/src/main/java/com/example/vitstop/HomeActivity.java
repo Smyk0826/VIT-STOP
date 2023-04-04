@@ -46,6 +46,7 @@ public class HomeActivity extends AppCompatActivity {
     private AllItemsAdapter resultAdapter;
     private ConstraintLayout home_page;
     private FrameLayout frontPage;
+    int itemNo = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -146,6 +147,22 @@ public class HomeActivity extends AppCompatActivity {
             Intent intent = new Intent(HomeActivity.this, MainActivity.class );
             startActivity(intent);
             finish();
+        }
+        if(item.getItemId()==R.id.order_btn){
+            itemNo = 1;
+            Intent intent = new Intent(HomeActivity.this,AllItems.class);
+            intent.putExtra("itemNumber",itemNo);
+            startActivity(intent);
+        }
+        if(item.getItemId()==R.id.sell_btn){
+            Intent intent = new Intent(HomeActivity.this,SellActivity.class);
+            startActivity(intent);
+        }
+        if(item.getItemId()==R.id.sold_btn){
+            itemNo = 2;
+            Intent intent = new Intent(HomeActivity.this,AllItems.class);
+            intent.putExtra("itemNumber",itemNo);
+            startActivity(intent);
         }
         return true;
     }

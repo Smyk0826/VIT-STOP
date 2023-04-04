@@ -26,6 +26,7 @@ import java.util.Map;
 
 public class PaymentActivity extends AppCompatActivity implements PaymentResultListener {
     TextView mTotal;
+    TextView FinalAmount;
     Button payBtn;
     Button newlogout;
     double amount = 2.0;
@@ -45,10 +46,12 @@ public class PaymentActivity extends AppCompatActivity implements PaymentResultL
         mAuth = FirebaseAuth.getInstance();
         setContentView(R.layout.activity_payment);
 
+        FinalAmount = findViewById(R.id.total_amount);
         mTotal = findViewById(R.id.subtotal);
-        newlogout = findViewById(R.id.newLogout);
         payBtn = findViewById(R.id.checkout);
         mTotal.setText("₹ "+amount+"");
+        FinalAmount.setText("₹ "+amount+"");
+
         Checkout.preload(getApplicationContext());
         payBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,13 +59,7 @@ public class PaymentActivity extends AppCompatActivity implements PaymentResultL
                 startPayment();
             }
         });
-        newlogout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(PaymentActivity.this,MainActivity3.class);
-                startActivity(intent);
-            }
-        });
+
     }
     public void startPayment() {
 

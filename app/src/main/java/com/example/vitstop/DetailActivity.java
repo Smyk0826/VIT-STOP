@@ -14,6 +14,7 @@ import com.bumptech.glide.Glide;
 import com.example.vitstop.Features.CategoryFragment;
 import com.example.vitstop.Features.Items;
 import com.example.vitstop.Features.Popular;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class DetailActivity extends AppCompatActivity {
     private ImageView mImage;
@@ -25,11 +26,13 @@ public class DetailActivity extends AppCompatActivity {
     private Button mAddtoCart;
     private Button mBuyBut;
     private Toolbar mToolbar;
+    private FirebaseFirestore mstore;
     Items items = null;
     Popular popular = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mstore = FirebaseFirestore.getInstance();
         setContentView(R.layout.activity_detail);
         mToolbar = findViewById(R.id.Detail_toolbar);
         setSupportActionBar(mToolbar);
