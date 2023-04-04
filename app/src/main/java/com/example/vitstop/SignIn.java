@@ -3,6 +3,7 @@ package com.example.vitstop;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -23,6 +24,7 @@ public class SignIn extends AppCompatActivity {
     private  EditText mConfirm;
     private TextView RegBtn;
     private FirebaseAuth mAuth;
+    private Toolbar mToolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +35,9 @@ public class SignIn extends AppCompatActivity {
         mConfirm = findViewById(R.id.editTextTextPassword3);
         RegBtn = findViewById(R.id.textView7);
         mAuth = FirebaseAuth.getInstance();
+        mToolbar = findViewById(R.id.Reg_toolbar);
+        setSupportActionBar(mToolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         RegBtn.setOnClickListener(new View.OnClickListener() {
             @Override

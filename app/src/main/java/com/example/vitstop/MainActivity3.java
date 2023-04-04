@@ -2,6 +2,7 @@ package com.example.vitstop;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -20,7 +21,9 @@ public class MainActivity3 extends AppCompatActivity {
     private EditText mEmail;
     private EditText mPassword;
     private TextView mLogBut;
+    private TextView createAcc;
     private FirebaseAuth mAuth;
+    private Toolbar mToolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +32,20 @@ public class MainActivity3 extends AppCompatActivity {
         mPassword = findViewById(R.id.inputpass);
         mLogBut = findViewById(R.id.textView8);
         mAuth = FirebaseAuth.getInstance();
+        createAcc = findViewById(R.id.createpro);
+        mToolbar = findViewById(R.id.Login_toolbar);
+        setSupportActionBar(mToolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        createAcc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity3.this,SignIn.class);
+                startActivity(intent);
+            }
+        });
+
+
 
         mLogBut.setOnClickListener(new View.OnClickListener() {
             @Override
