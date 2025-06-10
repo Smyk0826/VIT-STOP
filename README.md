@@ -39,7 +39,7 @@ Built using **Java (Android Studio)** with **Firebase** and **Cloud Firestore** 
 ## 🎥 Demo
 
 📱 **App Preview:**  
-[![Vitstop Demo](https://youtu.be/XG0kKpMlodo?si=bCq3yjCKEiyZRSHZ)
+- Video Link : https://youtu.be/XG0kKpMlodo?si=bCq3yjCKEiyZRSHZ
 
 ---
 
