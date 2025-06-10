@@ -51,7 +51,3 @@ Built using **Java (Android Studio)** with **Firebase** and **Cloud Firestore** 
 - Firebase Project set up (with Firestore & Auth)
 - Google Services JSON configured
 
-### 🛠️ Clone and Run
-
-```bash
-git clone https://github.com/your-username/vitstop.git
